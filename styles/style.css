@@ -6,8 +6,18 @@
 
 .jumbotron .container {
     text-align: center;
+    padding-top: 5ex;
 }
 
 .navbar {
     background: rgba(0,0,0,0.5);
+}
+
+.navbar-brand, .nav-item {
+    color: white !important;
+}
+
+.row {
+    margin-top: 10ex;
+    margin-bottom: 10ex;
 }
