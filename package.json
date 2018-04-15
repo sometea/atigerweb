@@ -1,0 +1,30 @@
+{
+  "name": "atigerweb",
+  "version": "1.0.0",
+  "description": "A Tiger Web Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "atiger",
+    "web",
+    "site",
+    "indie",
+    "pop",
+    "rock",
+    "music"
+  ],
+  "author": "David Dasenbrook",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "bootstrap": "^4.1.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.5.0",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
