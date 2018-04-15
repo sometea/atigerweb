@@ -1,8 +1,10 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: {
-        bundle: './src/js/index.js',
+        bundle: './src/index.js',
     },
     output: {
         filename: '[name].js',
@@ -17,9 +19,15 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'raw-loader'
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: 'src/index.html', to: 'index.html'},
+            { from: 'images', to: 'images' },
+        ]),
+    ],
 };
