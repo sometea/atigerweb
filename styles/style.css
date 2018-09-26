@@ -35,3 +35,15 @@ body {
 .headline, .nav-item {
     font-family: 'Montserrat', sans-serif;
 }
+
+.news-left {
+    text-align: left;
+    margin-right: 3em;
+    padding-bottom: 3em;
+}
+
+.news-right {
+    text-align: right;
+    margin-left: 3m;
+    padding-bottom: 3m;
+}
