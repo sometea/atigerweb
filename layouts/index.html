@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col-md-2">&nbsp;</div>
             <div class="col-md-8">
-                {{ range $pageNumber, $page := .Pages }}
+                {{ range $pageNumber, $page := (where .Pages "Type" "page") }}
                 {{ if not (mod $pageNumber 2) }}
                 <div class="news-left">
                     <h4>{{ $page.Title }}</h4>
@@ -70,7 +70,7 @@
                 {{ else }}
                 <div class="news-right">
                     <h4>{{ $page.Title }}</h4>
-                    {{ .Content }}
+                    {{ $page.Content }}
                 </div>
                 {{ end }}
                 {{ end }}
@@ -89,8 +89,9 @@
             <div class="col-md-2">&nbsp;</div>
             <div class="col-md-8">
                 <ul>
-                    <li>24.10.2018 Bahnwärter Thiel | Tumblinger Str. 29 | München</li>
-                    <li>07.08.2018 Rehearsal room gig | Arnulfstraße 197 | München | 19:30</li>
+                    {{ range (where .Pages "Type" "date") }}
+                    <li>{{ .Data.Date }} {{ .Title }} | {{ .Data.Address }} | {{ .Data.City }} | {{ .Data.Time }}</li>
+                    {{ end }}
                 </ul>
             </div>
             <div class="col-md-2">&nbsp;</div>
