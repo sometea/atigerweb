@@ -61,12 +61,19 @@
         <div class="row">
             <div class="col-md-2">&nbsp;</div>
             <div class="col-md-8">
+                {{ range $pageNumber, $page := .Pages }}
+                {{ if not (mod $pageNumber 2) }}
                 <div class="news-left">
-                    This is the first news entry. It should appear on the left.
+                    <h4>{{ $page.Title }}</h4>
+                    {{ $page.Content }}
                 </div>
+                {{ else }}
                 <div class="news-right">
-                    The badgers are back. Yes, really, they really really are. What should we do now?
+                    <h4>{{ $page.Title }}</h4>
+                    {{ .Content }}
                 </div>
+                {{ end }}
+                {{ end }}
             </div>
             <div class="col-md-2">&nbsp;</div>
         </div>
