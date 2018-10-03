@@ -47,3 +47,23 @@ body {
     margin-left: 3m;
     padding-bottom: 3m;
 }
+
+.news-title {
+    font-weight: bold;
+}
+
+.news-left img, .news-right img {
+    border-radius: 50%;
+    height: auto; 
+    width: auto; 
+    max-width: 160px;
+    max-height: 160px;
+}
+
+.news-left img {
+    float: left;
+}
+
+.news-right img {
+    float: right;
+}

@@ -64,14 +64,14 @@
                 {{ range $pageNumber, $page := (where .Pages "Type" "page") }}
                 {{ if not (mod $pageNumber 2) }}
                 <div class="news-left">
-                    <h4>{{ $page.Title }}</h4>
+                    <span class="news-title">{{ $page.Title }}</span>
                     {{ $page.Content }}
-                </div>
+                </div><br clear="both"/>
                 {{ else }}
                 <div class="news-right">
-                    <h4>{{ $page.Title }}</h4>
+                    <span class="news-title">{{ $page.Title }}</span>
                     {{ $page.Content }}
-                </div>
+                </div><br clear="both"/>
                 {{ end }}
                 {{ end }}
             </div>
@@ -90,7 +90,7 @@
             <div class="col-md-8">
                 <ul>
                     {{ range (where .Pages "Type" "date") }}
-                    <li>{{ .Data.Date }} {{ .Title }} | {{ .Data.Address }} | {{ .Data.City }} | {{ .Data.Time }}</li>
+                    <li>{{ .Params.DateOfGig }} {{ .Params.Title }} | {{ .Params.Address }} | {{ .Params.City }} | {{ .Params.Time }}</li>
                     {{ end }}
                 </ul>
             </div>
