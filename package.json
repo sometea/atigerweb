@@ -9,7 +9,7 @@
     "hugo": "hugo",
     "build": "npm run webpack && npm run hugo",
     "start": "hugo server",
-    "deploy": "npm run build && node deployment/index.js"
+    "deploy": "npm run build && aws s3 sync public/ s3://atigerband.com --acl public-read"
   },
   "keywords": [
     "atiger",
@@ -30,7 +30,6 @@
     "raw-loader": "^0.5.1",
     "style-loader": "^0.20.3",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14",
-    "s3deploy": "git+ssh://git@bitbucket.org/commutate/s3deploy.git"
+    "webpack-cli": "^2.0.14"
   }
 }
