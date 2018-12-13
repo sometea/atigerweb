@@ -89,8 +89,8 @@
             <div class="col-md-2">&nbsp;</div>
             <div class="col-md-8">
                 <ul>
-                    {{ range (where .Pages "Type" "date") }}
-                    <li>{{ .Params.DateOfGig }} {{ .Params.Title }} | {{ .Params.Address }} | {{ .Params.City }} | {{ .Params.Time }}</li>
+                    {{ range sort (where .Pages "Type" "date") "Params.test" }}
+                    <li>{{ .Params.dateOfGig }} {{ .Params.title }} | {{ .Params.address }} | {{ .Params.city }} | {{ .Params.time }}</li>
                     {{ end }}
                 </ul>
             </div>
