@@ -9,7 +9,7 @@
     "hugo": "hugo",
     "build": "npm run webpack && npm run hugo",
     "start": "hugo server",
-    "deploy-source": "npm run webpack && aws s3 sync ./ s3://atigerband-source --exclude \"node_modules/*\" --exclude \"public/*\" --exclude \".git/*\" --exclude \"src/*\"",
+    "deploy-source": "npm run webpack && aws s3 sync ./ s3://atigerband-source --exclude \"node_modules/*\" --exclude \"public/*\" --exclude \".git/*\" --exclude \"src/*\" --delete",
     "deploy": "npm run build && aws s3 sync public/ s3://atigerband.com --acl public-read"
   },
   "keywords": [

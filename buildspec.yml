@@ -8,8 +8,10 @@ phases:
     build:
         commands:
             - hugo
+            - echo "S3 Upload Beginning"
+            - aws s3 sync public/ s3://atigerband.com/ --region us-east-1 --delete --acl public-read
+            - echo "S3 Upload Complete"
 
     post_build:
         commands:
             - echo "Build complete"
-            
