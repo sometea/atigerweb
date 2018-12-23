@@ -1,10 +1,6 @@
 version: 0.2
 
 phases:
-    install:
-        commands:
-            - wget https://github.com/gohugoio/hugo/releases/download/v0.52/hugo_0.52_Linux-64bit.deb
-            - dpkg -i hugo_0.52_Linux-64bit.deb
     build:
         commands:
             - hugo
