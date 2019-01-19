@@ -3,6 +3,9 @@ version: 0.2
 phases:
     build:
         commands:
+            - echo "Stopping all other running builds"
+            - sh /root/stopAllOtherBuilds.sh
+            - echo "Running Hugo"
             - hugo
             - echo "S3 Upload Beginning"
             - aws s3 sync public/ s3://atigerband.com/ --region us-east-1 --delete --acl public-read
